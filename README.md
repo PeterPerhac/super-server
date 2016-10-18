@@ -52,11 +52,20 @@ Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/
 
 ## Usage
 
-Let's say you have a number of computers on your home network. One or more of these may be running SuperServer. For example computer A is running an instance of SuperServer, compute B is on the same network as computer A, and can contact A directy via it's IP address. If you know the IP address, (it will be something like 192.168.0.3) then you can send commands to that computer's SuperServer from any browser by navigating to a URL like this:
+Let's say you have a number of computers on your home network. One or more of these may be running SuperServer. For example computer A is running an instance of SuperServer, compute B is on the same network as computer A, and can contact A directy (is not blocked by a firewall, etc.). If you know the IP address, (it will be something like 192.168.0.3) then you can send commands to that computer's SuperServer from any browser by navigating to a URL like this:
 
-http://192.18.0.3:44556/app:4;wait:2000;mm:600,500;click;type:hello;space;type:world
+http://192.168.0.3:44556/app:4;wait:2000;mm:600,500;click;type:hello;space;type:world
 
 the above example will tell the SuperServer on .3 computer to switch to app pinned to number 4, wait a couple seconds for app to load, mouve the mouse to somewhere in the middle of the screen, then click and start typing 'hello' space 'world'.
+
+This means that you can command your SuperServer-enabled computer from any device, mobile, tablet, pc, as long as all are tuned into the same WIFI network. Just fire up a browser and start commanding!
+
+###Syntax
+
+`ip.add.res.s:port/command[:arg1,arg2][;command[:arg]]*`
+
+as you may have noticed, anything after the first forward slash is interpreted by SuperServer in a sequence. Individual commands are separated by a semicolon, commands are separated from their arguments by colons, individual arguments (as in the case of mm:100,200) are separated by a comma (note, not spaces around it to be URL-friendly).
+
 
 ## Notes
 
