@@ -1,0 +1,20 @@
+Attempts to shut down IntelliJ IDEA, disconnecting and terminating any running processes (possibly the SuperServer)
+http://192.168.0.5:44556/mm:20,30;click;mm:20,520;click;enter;wait:1000;enter
+
+
+Recycles Total Commander on other MUNCHHAUSEN:
+http://192.168.0.3:44556/mm:1350,10;click;wait:500;mm:20,768;wait:500;mm:80,760;click;mm:650,350
+
+or just close any window: (attempts to click the X in top right corner)
+http://192.168.0.3:44556/mm:1350,10;click
+
+
+Empty the Recycle Bin on MUNCHHAUSEN:
+http://192.168.0.3:44556/mm:1260,10;click;mm:40,40;rclick;wait:250;mm:60,80;click;wait:500;enter
+
+slowly type "Peter " into notepad window, if it is open (initial wait is to allow for user to release Control key, if using Ctrl+R for reloading tab)
+http://localhost:44556/wait:500;mm:500,500;click;type:P;wait:250;type:e;wait:250;type:t;wait:250;type:e;wait:250;type:r%20;
+
+
+open volume control on MUNCHHAUSEN:
+http://192.168.0.3:44556/mm:1240,760;click

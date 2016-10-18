@@ -1,0 +1,12 @@
+body {
+  zoom: 300%;
+}
+
+.borders{
+  padding: 20px;
+  border: 1px solid black;
+}
+
+* {
+  margin: 3px;
+}
