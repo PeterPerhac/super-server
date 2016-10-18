@@ -2,10 +2,9 @@
 
 A crude little automation helper for home purposes. Uses AWT Robot to click, type, etc on a host machine, interpreting commands received over TCP ServerSocket and using a custom HTTP-like protocol
 
-By default runs on port **44556**
+By default SuperServer binds to port **44556**
 
 Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/command*
-
 
 ## Command line arguments
 
@@ -49,7 +48,6 @@ Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/
 | *vol-* | will attempt to reduce the sound volume by sending the Windows+, (comma) keys |
 | *wait*:5000 | will cause SuperServer to wait for 5000ms before executing the next command in the chain |
 
-
 ## Usage
 
 Let's say you have a number of computers on your home network. One or more of these may be running SuperServer. For example computer A is running an instance of SuperServer, compute B is on the same network as computer A, and can contact A directy (is not blocked by a firewall, etc.). If you know the IP address, (it will be something like 192.168.0.3) then you can send commands to that computer's SuperServer from any browser by navigating to a URL like this:
@@ -60,12 +58,11 @@ the above example will tell the SuperServer on .3 computer to switch to app pinn
 
 This means that you can command your SuperServer-enabled computer from any device, mobile, tablet, pc, as long as all are tuned into the same WIFI network. Just fire up a browser and start commanding!
 
-###Syntax
+### Syntax
 
-`ip.add.res.s:port/command[:arg1,arg2][;command[:arg]]*`
+`ip.add.res.s:port/command[:arg1[,arg2]][;command[:arg]]*`
 
 as you may have noticed, anything after the first forward slash is interpreted by SuperServer in a sequence. Individual commands are separated by a semicolon, commands are separated from their arguments by colons, individual arguments (as in the case of mm:100,200) are separated by a comma (note, not spaces around it to be URL-friendly).
-
 
 ## Notes
 
