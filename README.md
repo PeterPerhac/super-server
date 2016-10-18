@@ -32,7 +32,7 @@ Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/
 |-----------------|-------------|
 | *app*:1 | sends the Windows+1 keys in order to switch to the application pinned to position number 1 |
 | *close* | sends the Alt+F4 keys in order to close active window|
-| *ctrl*:s | sends the Ctrl+s command. Note, aAny other single letter key can be pressed in combination with Ctrl using this command |
+| *ctrl*:s | sends the Ctrl+s command. Note, any other single letter key can be pressed in combination with Ctrl using this command |
 | *desktop* | sends the Windows+D keys in order to activate (bring to foreground) the desktop |
 | *enter* | Press the Return key |
 | *escape* | the Esc button |
