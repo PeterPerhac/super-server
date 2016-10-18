@@ -23,9 +23,9 @@ Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/
 
 | **example command** | **description**                                                                   |
 |-------------------|-------------------------------------------------------------------------------------|
-| *mm:500,600      *| Mouse Move to position x=500, y=600. (0,0) is in the top left corner of the screen. |
-| *click           *| left-click (main mouse button press and release)                                    |
-| *rclick          *| right-click (secondary button press and release)                                    |
+| *mm:500,600*      | Mouse Move to position x=500, y=600. (0,0) is in the top left corner of the screen. |
+| *click*           | left-click (main mouse button press and release)                                    |
+| *rclick*          | right-click (secondary button press and release)                                    |
 
 ### Keyboard control
 
