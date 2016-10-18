@@ -29,7 +29,39 @@ Talk to the SuperServer from any Web browser, just hit the appropriate *IP:port/
 
 ### Keyboard control
 
+| example command | description |
+|-----------------|-------------|
+| *app*:1 | sends the Windows+1 keys in order to switch to the application pinned to position number 1 |
+| *close* | sends the Alt+F4 keys in order to close active window|
+| *ctrl*:s | sends the Ctrl+s command. Note, aAny other single letter key can be pressed in combination with Ctrl using this command |
+| *desktop* | sends the Windows+D keys in order to activate (bring to foreground) the desktop |
+| *enter* | Press the Return key |
+| *escape* | the Esc button |
+| *space* | space bar |
+| *bspace* | backspace |
+| *type*:something | This can be used to send a series of characters to be typed. Must not include spaces (send separate space command for that).  Only a-zA-Z characters recognized |
 
 ### Miscellaneous
+
+| example command | description |
+|-----------------|-------------|
+| *vol+* | will attempt to increase the sound volume by sending the Windows+. (dot) keys |
+| *vol-* | will attempt to reduce the sound volume by sending the Windows+, (comma) keys |
+| *wait*:5000 | will cause SuperServer to wait for 5000ms before executing the next command in the chain |
+
+
+## Usage
+
+Let's say you have a number of computers on your home network. One or more of these may be running SuperServer. For example computer A is running an instance of SuperServer, compute B is on the same network as computer A, and can contact A directy via it's IP address. If you know the IP address, (it will be something like 192.168.0.3) then you can send commands to that computer's SuperServer from any browser by navigating to a URL like this:
+
+http://192.18.0.3:44556/app:4;wait:2000;mm:600,500;click;type:hello;space;type:world
+
+the above example will tell the SuperServer on .3 computer to switch to app pinned to number 4, wait a couple seconds for app to load, mouve the mouse to somewhere in the middle of the screen, then click and start typing 'hello' space 'world'.
+
+## Notes
+
+### Sound volume control
+Sound volume adjustments are not normally possible via the AWT Robot, so special steps need to be taken to make these two commands work as expected. For Windows, there is an AutoHotkey.exe binary included (download and execute at your own risk). You can grab AutoHotkey from the official site, if you feel like it. The script volume_control.ahk needs to be run on system startup in order to map the Win+. / Win+, combinations to the multimedia +/- keys
+If anyone knows of a better solution to control sound volume from a Java app, please do shout, but I struggled hard to come up with this workaround, and it's admittedly a major painpoint of the application.
 
 
