@@ -6,3 +6,12 @@ Return
 #,::
    Send {Volume_Down}
 Return
+
+#]::
+   Send {Media_Next}
+Return
+
+#[::
+   Send {Media_Prev}
+Return
+
