@@ -16,17 +16,17 @@
   </select>
  
   <div class="borders">
-    <button id="vol-up">VOLUME +</button>
     <button id="vol-down">VOLUME -</button>
-    <br />
+    <button id="vol-up">VOLUME +</button>
+    <button id="media-prev">&lt;&lt;</button>
+    <button id="media-next">&gt;&gt;</button>
     <br />
     <div id="apps">
       <?php 
-        for ($i=1; $i<=10; $i++){
+        for ($i=1; $i<10; $i++){
             echo "<button class='appBtn' id='app-$i' data-appno='$i'>$i</button> ";
         }
       ?>
-      <br/>
       <br/>
       <button id="desktop">Desktop (Win+D)</button>
       <button id="close">Close (Alt+F4)</button>
@@ -35,24 +35,21 @@
       <button id="space">Space [_]</button>
       <button id="escape">Escape [Esc]</button>
       <br/>
-      <br/>
-      <p style="font-weight:bold">Control</p>
-      <input type="text" id="command" size="1" maxlength="1" />
-      <button id="control">Send</button>
-      <br/>
-      <br/>
       <p style="font-weight:bold">Teletype</p>
       <p style="font-size:small">Only a-zA-Z characters supported</p>
-      <input type="text" id="text" size="10" />
+      <input type="text" id="text" size="10" value="f" />
       <button id="type">Send</button>
       <br/>
-      <br/>
       <p style="font-weight:bold">Mouse</p>
-      <input type="text" id="mm" size="10" />
+      <input type="text" id="mm" size="10" value="500,500" />
       <button id="mouse-move">Move</button>
       <br/>
       <button id="click">Click</button>
       <button id="rclick">Right-Click</button>
+      <br/>
+      <p style="font-weight:bold">Control</p>
+      <input type="text" id="command" size="1" maxlength="1" />
+      <button id="control">Send</button>
       <br/>
     </div>
   </div>
@@ -64,8 +61,10 @@
       var getHostAndPort = function(){ return ''+$('#ip').val()+':'+$('#ip').attr('data-port'); }
       var sendCommand = function(command){ $.ajax({url: "http://"+getHostAndPort()+"/"+command, dataType: "jsonp" }); }      
       
-      $('#vol-up').click(function(){sendCommand("vol+");});
+      $('#media-prev').click(function(){sendCommand("media-");});
+      $('#media-next').click(function(){sendCommand("media+");});
       $('#vol-down').click(function(){sendCommand("vol-");});
+      $('#vol-up').click(function(){sendCommand("vol+");});
       $('#apps .appBtn').click(function(){sendCommand("app:"+$(this).attr('data-appno'));});
       $('#close').click(function(){sendCommand("close");});
       $('#escape').click(function(){sendCommand("esc");});
