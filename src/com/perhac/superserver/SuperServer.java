@@ -166,6 +166,10 @@ public class SuperServer {
                 case "bspace":
                     keyPressAndRelease(KEY_LOOKUP_TABLE.get(strings[0].toLowerCase()));
                     break;
+                case "media+":
+                case "media-":
+                    keyPressAndRelease(cmd.endsWith("+") ? KeyEvent.VK_CLOSE_BRACKET : KeyEvent.VK_OPEN_BRACKET, KeyEvent.VK_WINDOWS);
+                    break;
                 case "vol+":
                 case "vol-":
                     keyPressAndRelease(cmd.endsWith("+") ? KeyEvent.VK_PERIOD : KeyEvent.VK_COMMA, KeyEvent.VK_WINDOWS);
